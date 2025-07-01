@@ -1,4 +1,4 @@
-# Install script for directory: /home/kobe/Desktop/cpp/rpc/mprpc/example/caller
+# Install script for directory: /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/example/caller
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

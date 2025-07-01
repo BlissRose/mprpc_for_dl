@@ -4,13 +4,13 @@
 src/CMakeFiles/mprpc.dir/logger.cc.o
  ../src/include/lockqueue.h
  ../src/include/logger.h
- /home/kobe/Desktop/cpp/rpc/mprpc/src/logger.cc
+ /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/logger.cc
 src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o
  ../src/include/mprpcapplication.h
  ../src/include/mprpcchannel.h
  ../src/include/mprpcconfig.h
  ../src/include/mprpccontroller.h
- /home/kobe/Desktop/cpp/rpc/mprpc/src/mprpcapplication.cc
+ /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/mprpcapplication.cc
 src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o
  ../src/include/mprpcapplication.h
  ../src/include/mprpcchannel.h
@@ -18,16 +18,16 @@ src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o
  ../src/include/mprpccontroller.h
  ../src/include/rpcheader.pb.h
  ../src/include/zookeeperutil.h
- /home/kobe/Desktop/cpp/rpc/mprpc/src/mprpcchannel.cc
+ /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/mprpcchannel.cc
 src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o
  ../src/include/mprpcconfig.h
- /home/kobe/Desktop/cpp/rpc/mprpc/src/mprpcconfig.cc
+ /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/mprpcconfig.cc
 src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o
  ../src/include/mprpccontroller.h
- /home/kobe/Desktop/cpp/rpc/mprpc/src/mprpccontroller.cc
+ /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/mprpccontroller.cc
 src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o
  ../src/include/rpcheader.pb.h
- /home/kobe/Desktop/cpp/rpc/mprpc/src/rpcheader.pb.cc
+ /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/rpcheader.pb.cc
 src/CMakeFiles/mprpc.dir/rpcprovider.cc.o
  ../src/include/lockqueue.h
  ../src/include/logger.h
@@ -38,11 +38,11 @@ src/CMakeFiles/mprpc.dir/rpcprovider.cc.o
  ../src/include/rpcheader.pb.h
  ../src/include/rpcprovider.h
  ../src/include/zookeeperutil.h
- /home/kobe/Desktop/cpp/rpc/mprpc/src/rpcprovider.cc
+ /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/rpcprovider.cc
 src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o
  ../src/include/mprpcapplication.h
  ../src/include/mprpcchannel.h
  ../src/include/mprpcconfig.h
  ../src/include/mprpccontroller.h
  ../src/include/zookeeperutil.h
- /home/kobe/Desktop/cpp/rpc/mprpc/src/zookeeperutil.cc
+ /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/zookeeperutil.cc

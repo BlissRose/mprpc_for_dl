@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kobe/Desktop/cpp/rpc/mprpc/src/logger.cc" "/home/kobe/Desktop/cpp/rpc/mprpc/build/src/CMakeFiles/mprpc.dir/logger.cc.o"
-  "/home/kobe/Desktop/cpp/rpc/mprpc/src/mprpcapplication.cc" "/home/kobe/Desktop/cpp/rpc/mprpc/build/src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
-  "/home/kobe/Desktop/cpp/rpc/mprpc/src/mprpcchannel.cc" "/home/kobe/Desktop/cpp/rpc/mprpc/build/src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o"
-  "/home/kobe/Desktop/cpp/rpc/mprpc/src/mprpcconfig.cc" "/home/kobe/Desktop/cpp/rpc/mprpc/build/src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o"
-  "/home/kobe/Desktop/cpp/rpc/mprpc/src/mprpccontroller.cc" "/home/kobe/Desktop/cpp/rpc/mprpc/build/src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o"
-  "/home/kobe/Desktop/cpp/rpc/mprpc/src/rpcheader.pb.cc" "/home/kobe/Desktop/cpp/rpc/mprpc/build/src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o"
-  "/home/kobe/Desktop/cpp/rpc/mprpc/src/rpcprovider.cc" "/home/kobe/Desktop/cpp/rpc/mprpc/build/src/CMakeFiles/mprpc.dir/rpcprovider.cc.o"
-  "/home/kobe/Desktop/cpp/rpc/mprpc/src/zookeeperutil.cc" "/home/kobe/Desktop/cpp/rpc/mprpc/build/src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o"
+  "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/logger.cc" "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/CMakeFiles/mprpc.dir/logger.cc.o"
+  "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/mprpcapplication.cc" "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
+  "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/mprpcchannel.cc" "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o"
+  "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/mprpcconfig.cc" "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o"
+  "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/mprpccontroller.cc" "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o"
+  "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/rpcheader.pb.cc" "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o"
+  "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/rpcprovider.cc" "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/CMakeFiles/mprpc.dir/rpcprovider.cc.o"
+  "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/src/zookeeperutil.cc" "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

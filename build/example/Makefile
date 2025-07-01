@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kobe/Desktop/cpp/rpc/mprpc
+CMAKE_SOURCE_DIR = /home/kobe/Desktop/cpp/rpc/mprpc_for_dl
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kobe/Desktop/cpp/rpc/mprpc/build
+CMAKE_BINARY_DIR = /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/kobe/Desktop/cpp/rpc/mprpc/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kobe/Desktop/cpp/rpc/mprpc/build/CMakeFiles /home/kobe/Desktop/cpp/rpc/mprpc/build/example/CMakeFiles/progress.marks
-	cd /home/kobe/Desktop/cpp/rpc/mprpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kobe/Desktop/cpp/rpc/mprpc/build/CMakeFiles 0
+	cd /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/CMakeFiles /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/example/CMakeFiles/progress.marks
+	cd /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build && $(MAKE) -f CMakeFiles/Makefile2 example/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/kobe/Desktop/cpp/rpc/mprpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
+	cd /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/kobe/Desktop/cpp/rpc/mprpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/kobe/Desktop/cpp/rpc/mprpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/kobe/Desktop/cpp/rpc/mprpc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -129,6 +129,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/kobe/Desktop/cpp/rpc/mprpc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

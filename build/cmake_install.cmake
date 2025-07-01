@@ -1,4 +1,4 @@
-# Install script for directory: /home/kobe/Desktop/cpp/rpc/mprpc
+# Install script for directory: /home/kobe/Desktop/cpp/rpc/mprpc_for_dl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/kobe/Desktop/cpp/rpc/mprpc/build/src/cmake_install.cmake")
-  include("/home/kobe/Desktop/cpp/rpc/mprpc/build/example/cmake_install.cmake")
+  include("/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/src/cmake_install.cmake")
+  include("/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/example/cmake_install.cmake")
 
 endif()
 
@@ -52,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kobe/Desktop/cpp/rpc/mprpc/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kobe/Desktop/cpp/rpc/mprpc_for_dl/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
