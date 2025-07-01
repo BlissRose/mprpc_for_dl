@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package fixbug;
+
+// 开启C++的泛型服务
+option cc_generic_services = true;
+
+/**
+ * 结果码消息体
+ * 用于表示错误代码和错误信息
+ */
+message ResultCode
+{
+    int32 errcode = 1; // 错误代码
+    bytes errmsg = 2;  // 错误信息
+}
+
+/**
+ * 登录请求消息体
+ * 包含用户登录所需的信息
+ */
+message LoginRequest
+{
+    bytes name = 1; // 用户名
+    bytes pwd = 2;  // 密码
+}
+
+/**
+ * 登录响应消息体
+ * 包含登录操作的结果信息
+ */
+message LoginResponse
+{
+    ResultCode result = 1; // 操作结果码
+    bool sucess = 2;       // 登录是否成功
+}
+
+/**
+ * 注册请求消息体
+ * 包含用户注册所需的信息
+ */
+message RegisterRequest
+{
+    uint32 id = 1;   // 用户ID
+    bytes name = 2;  // 用户名
+    bytes pwd = 3;   // 密码
+}
+
+/**
+ * 注册响应消息体
+ * 包含注册操作的结果信息
+ */
+message RegisterResponse
+{
+    ResultCode result = 1; // 操作结果码
+    bool sucess = 2;       // 注册是否成功
+}
+
+/**
+ * 用户服务接口
+ * 提供用户登录和注册的功能
+ */
+service UserServiceRpc
+{
+    // 登录方法，接受登录请求，返回登录响应
+    rpc Login(LoginRequest) returns(LoginResponse);
+    // 注册方法，接受注册请求，返回注册响应
+    rpc Register(RegisterRequest) returns(RegisterResponse);
+}

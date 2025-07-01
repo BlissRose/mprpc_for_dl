@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package fixbug;
+
+// 启用C++的泛型服务
+option cc_generic_services = true;
+
+/**
+ * 错误码和错误消息的封装
+ * 用于响应中携带错误信息
+ */
+message ResultCode
+{
+    int32 errcode = 1;  // 错误码
+    bytes errmsg = 2;   // 错误消息
+}
+
+/**
+ * 获取好友列表的请求
+ * 包含需要查询好友列表的用户ID
+ */
+message GetFriendsListRequest
+{
+    uint32 userid = 1;  // 用户ID
+}
+
+/**
+ * 获取好友列表的响应
+ * 包含结果码和好友列表
+ */
+message GetFriendsListResponse
+{
+    ResultCode result = 1;      // 结果码
+    repeated bytes friends = 2; // 好友列表
+}
+
+/**
+ * 好友模块的服务定义
+ * 提供获取好友列表的功能
+ */
+service FiendServiceRpc
+{
+    // 获取用户好友列表的RPC方法
+    rpc GetFriendsList(GetFriendsListRequest) returns(GetFriendsListResponse);
+}  

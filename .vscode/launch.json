@@ -1,0 +1,58 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "name": "Debug Provider",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/provider",
+      "args": [
+        "-i",
+        "${workspaceFolder}/bin/test.conf"
+      ],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "externalConsole": false,
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Debug Consumer",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/consumer",
+      "args": [
+        "-i",
+        "${workspaceFolder}/bin/test.conf"
+      ],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "externalConsole": false,
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ],
+  // Compound 用于同时启动多个会话
+  "compounds": [
+    {
+      "name": "Debug Both",
+      "configurations": [
+        "Debug Provider",
+        "Debug Consumer"
+      ]
+    }
+  ]
+}
