@@ -15,3 +15,16 @@
 1:2:50 =>[info] ddddd
 1:2:50 =>[info] service_name:FiendServiceRpc
 1:2:50 =>[info] method_name:GetFriendsList
+23:44:20 =>[info] ddddd
+23:44:20 =>[info] ddddd
+23:44:20 =>[info] service_name:FiendServiceRpc
+23:44:20 =>[info] method_name:GetFriendsList
+23:45:39 =>[info] service_name:UserServiceRpc
+23:45:39 =>[info] method_name:Login
+23:45:39 =>[info] method_name:Register
+23:47:40 =>[info] service_name:UserServiceRpc
+23:47:40 =>[info] method_name:Login
+23:47:40 =>[info] method_name:Register
+23:48:47 =>[info] service_name:UserServiceRpc
+23:48:47 =>[info] method_name:Login
+23:48:47 =>[info] method_name:Register
