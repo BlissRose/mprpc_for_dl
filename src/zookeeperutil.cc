@@ -14,6 +14,8 @@
  * @param path 触发事件的节点路径，对于会话事件来说这个参数没有意义。
  * @param watcherCtx 观察者上下文，可以是任何用户定义的数据。
  */
+
+
 void global_watcher(zhandle_t *zh, int type,
 					int state, const char *path, void *watcherCtx)
 {
@@ -33,6 +35,7 @@ void global_watcher(zhandle_t *zh, int type,
 
 ZkClient::ZkClient() : m_zhandle(nullptr)
 {
+
 }
 
 ZkClient::~ZkClient()
@@ -61,6 +64,7 @@ void ZkClient::Start()
 	*/
 	// 初始化Zookeeper句柄并建立连接
 	m_zhandle = zookeeper_init(connstr.c_str(), global_watcher, 30000, nullptr, nullptr, 0);
+
 	if (nullptr == m_zhandle)
 	{
 		// 如果句柄为空，说明连接失败，输出错误信息并退出程序
@@ -110,6 +114,7 @@ std::string ZkClient::GetData(const char *path)
 {
 	char buffer[64];
 	int bufferlen = sizeof(buffer);
+	// 获取path对应的数据值
 	int flag = zoo_get(m_zhandle, path, 0, buffer, &bufferlen, nullptr);
 	if (flag != ZOK)
 	{

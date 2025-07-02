@@ -6,8 +6,10 @@
 #include <condition_variable> // 提供条件变量，用于线程间同步
 
 // 异步写日志的日志队列模板类
+
 // 适用于生产者-消费者模型：多个线程写入（Push），一个线程读取（Pop）
 template<typename T>
+
 class LockQueue
 {
 public:

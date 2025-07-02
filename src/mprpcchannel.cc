@@ -46,7 +46,8 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
 
     uint32_t header_size = 0;
     std::string rpc_header_str;
-    // 序列化rpc请求header
+    header_size = rpc_header_str.size();
+    // 序列化rpc请求header并获取header_size的大小
     if (rpcHeader.SerializeToString(&rpc_header_str))
     {
         header_size = rpc_header_str.size();
@@ -81,11 +82,13 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         sprintf(errtxt, "create socket error! errno:%d", errno);
         controller->SetFailed(errtxt);
         return;
-    }
+    } 
 
     // 读取配置文件rpcserver的信息
     // std::string ip = MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");
     // uint16_t port = atoi(MprpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
+
+
     // rpc调用方想调用service_name的method_name服务，需要查询zk上该服务所在的host信息
     //在这里查询服务在哪里，上边是直接知道
     ZkClient zkCli;
@@ -149,6 +152,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     // 反序列化rpc调用的响应数据
     // std::string response_str(recv_buf, 0, recv_size); // bug出现问题，recv_buf中遇到\0后面的数据就存不下来了，导致反序列化失败
     // if (!response->ParseFromString(response_str))
+    
     if (!response->ParseFromArray(recv_buf, recv_size))
     {
         close(clientfd);

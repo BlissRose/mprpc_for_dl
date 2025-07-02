@@ -13,6 +13,7 @@ json   protobuf
 // 这里是框架提供给外部使用的，可以发布rpc方法的函数接口
 void RpcProvider::NotifyService(google::protobuf::Service *service)
 {
+    // 存储服务对象和服务方法信息，是一个map
     ServiceInfo service_info;
 
     // 获取了服务对象的描述信息
@@ -44,7 +45,11 @@ void RpcProvider::Run()
 {
     // 读取配置文件rpcserver的信息
     std::string ip = MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");// 获取ip
-    uint16_t port = atoi(MprpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());//为啥使用.c_str()这个函数？因为端口号是uint16_t类型，但配置文件里面是字符串，所以需要转换成字符串
+    uint16_t port = atoi(MprpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str()); // 为啥使用.c_str()这个函数？因为端口号是uint16_t类型，但配置文件里面是字符串，atoi 函数只接受 const char* 类型参数，所以需要使用_str()转换成const char*
+    
+    /*
+    下边是用muduo库作为网络层
+    */
     muduo::net::InetAddress address(ip, port);
 
     // 创建TcpServer对象
@@ -52,6 +57,7 @@ void RpcProvider::Run()
 
     // 绑定连接回调和消息读写回调方法  分离了网络代码和业务代码
     server.setConnectionCallback(std::bind(&RpcProvider::OnConnection, this, std::placeholders::_1));
+    // 绑定消息读写回调方法
     server.setMessageCallback(std::bind(&RpcProvider::OnMessage, this, std::placeholders::_1,
                                         std::placeholders::_2, std::placeholders::_3));
 
@@ -61,6 +67,7 @@ void RpcProvider::Run()
     // 把当前rpc节点上要发布的服务全部注册到zk上面，让rpc client可以从zk上发现服务
     // session timeout   30s     zkclient 网络I/O线程  1/3 * timeout 时间发送ping消息
     ZkClient zkCli;
+
     zkCli.Start();
     // service_name为永久性节点    method_name为临时性节点
     for (auto &sp : m_serviceMap)
@@ -68,13 +75,15 @@ void RpcProvider::Run()
         // /service_name   /UserServiceRpc，一层一层创建
         std::string service_path = "/" + sp.first;
         zkCli.Create(service_path.c_str(), nullptr, 0);
+        //循环遍历方法
         for (auto &mp : sp.second.m_methodMap)
         {
             // /service_name/method_name   /UserServiceRpc/Login 存储当前这个rpc服务节点主机的ip和port
             std::string method_path = service_path + "/" + mp.first;
             char method_path_data[128] = {0};
-            sprintf(method_path_data, "%s:%d", ip.c_str(), port);
-            // ZOO_EPHEMERAL表示znode是一个临时性节点
+            // 把ip 和 port写到method_path中，然后储存在当前这个rpc服务节点
+            sprintf(method_path_data, "%s:%d", ip.c_str(), port);//
+            // ZOO_EPHEMERAL表示znode是一个临时性节点，默认是永久性节点
             zkCli.Create(method_path.c_str(), method_path_data, strlen(method_path_data), ZOO_EPHEMERAL);
         }
     }
@@ -82,7 +91,7 @@ void RpcProvider::Run()
     // rpc服务端准备启动，打印信息
     std::cout << "RpcProvider start service at ip:" << ip << " port:" << port << std::endl;
 
-    // 启动网络服务
+    // 启动muduo网络服务
     server.start();
     m_eventLoop.loop();
 }
@@ -116,7 +125,7 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn,
     // 网络上接收的远程rpc调用请求的字符流    Login args
     std::string recv_buf = buffer->retrieveAllAsString();
 
-    // 从字符流中读取前4个字节的内容
+    // 从字符流中读取前4个字节的内容，就是数据头的长度
     uint32_t header_size = 0;
     recv_buf.copy((char *)&header_size, 4, 0);
 
@@ -141,7 +150,7 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn,
         return;
     }
 
-    // 获取rpc方法参数的字符流数据
+    // 获取rpc方法参数的二进制字符流数据
     std::string args_str = recv_buf.substr(4 + header_size, args_size);
 
     // 打印调试信息

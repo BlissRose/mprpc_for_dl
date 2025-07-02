@@ -3,9 +3,6 @@
 #include <unistd.h>
 #include <string>
 
-// MprpcApplication类的静态成员变量m_config，用于存储配置信息
-// 类内定义，类外初始化，因为静态成员变量必须在类外初始化
-MprpcConfig MprpcApplication::m_config;
 
 /**
  * 显示参数帮助信息的函数
@@ -24,7 +21,7 @@ void ShowArgsHelp()
  */
 void MprpcApplication::Init(int argc, char **argv)
 {
-    //判断参数个数，不行就报错
+    //判断参数个数，是三个参数
     if (argc < 2)
     {
         ShowArgsHelp();//输出提示信息
@@ -65,13 +62,19 @@ void MprpcApplication::Init(int argc, char **argv)
 /**
  * 获取MprpcApplication类的单例实例
  * @return MprpcApplication类的引用
- * 该函数实现了单例模式，确保在整个应用程序中只有一个MprpcApplication实例
+ * 该函数实现了单例模式，确保在整个应用程序中只有一个MprpcApplication实例，懒汉模式
  */
 MprpcApplication& MprpcApplication::GetInstance()
 {
     static MprpcApplication app;
     return app;
-}MprpcConfig& MprpcApplication::GetConfig()
+}
+
+// MprpcApplication类的静态成员变量m_config，用于存储配置信息
+// 类内定义，类外初始化，因为静态成员变量必须在类外初始化
+MprpcConfig MprpcApplication::m_config;
+MprpcConfig& MprpcApplication::GetConfig()
 {
+
     return m_config;
 }
